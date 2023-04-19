@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> Berliinin loma</title>   
+    </head>
+    <link rel="stylesheet" href="/CSS/tyyli.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .vasen{
+        width: 60%;
+        float: left;
+      }
+      .oikea{
+        width: 40%;
+        float: right;
+      }  
+    </style>
+</head>
+
+<body onload=alustus();>
+
+  <script src="/Javasript/countdown.js"></script>
+  <script src="/Javasript/hintalaskuri.js"></script>
+  <ul>
+    <li>
+        <a href="/etusivu_loma.html" target="_blank">Etusivu</a>
+    </li>
+    <li>
+        <a href="/Verkkosivut/loma.html" target="_blank">Lennot ja hotellit</a>
+    </li>
+    <li> 
+        <a href="/Verkkosivut/loma2.html" target="_blank">Tietopaketti Berliinistä</a>
+    </li>
+  </ul>
+  <br>
+  <br>  
+  <h1> Berliinin loman alkuun aikaa</h1>
+  <p id="demo"></p>
+  <div class="vasen">
+    <table>
+      <tr>
+        <th>Hotellit Berliinistä</th>
+        <th>Lennot Berliiniin</th>
+      </tr>
+      <tr>
+        <td> <a href="https://www.ebookers.fi/Berliini-Hotellit.d179892.Matkaoppaat-hotellit?locale=fi_FI&siteid=70473&semcid=EBOOKERS-FI.UB.GOOGLE.DT-c-FI.HOTEL&SEMDTL=a113173200335.b1131108042148.g1kwd-3527148668.l1.e1c.m1CjwKCAjw__ihBhADEiwAXEazJv7nbsaf9j8AaVd7wiVRNqIoofYLMVjGeA8YUAmom4cO9XdJygG1rBoCOR4QAvD_BwE.r1b95cd6efcec4ff76dbc4d3cf668a425be87ed49089c1c365f3db33bdd07b8cba.c1.j11005766.k1.d1629314815270.h1e.i1.n1.o1.p1.q1.s1.t1.x1.f1.u1.v1.w1&gclid=CjwKCAjw__ihBhADEiwAXEazJv7nbsaf9j8AaVd7wiVRNqIoofYLMVjGeA8YUAmom4cO9XdJygG1rBoCOR4QAvD_BwE">
+          Hotellit</a></td> 
+        <td><a href="https://www.finnair.com/fi-fi/kohteet/eurooppa/saksa/berliini">Lennot</a></td>
+      </tr>
+    </table>  
+    <form onchange="yhteishinta(document.getElementById('hotelli').value,
+            document.getElementById('lennot').value);">
+            <label for="hotelli">Hotellin hinta(€): </label>
+            <input type="number" id="hotelli" name="hotelli" min="1" max="9999"
+                value="100">
+
+            <label for="lennot">Lentojen hinnat: </label>
+            <input type="number" id="lennot" name="lennot" min="1" max="9999"
+                value="100">
+    </form>
+
+  <div id="hinta"> <p>Hintaa ei ole laskettu.</p></div>
+
+      <form onchange="sailytys(document.getElementById('kylla').checked);">
+        <p>Säilytetäänkö laskettu hinta</p>
+        <label for="ei">Ei</label>
+        <input type="radio" id="ei" name="tallennus" value="Ei">
+
+        <label for="kylla">Kyllä</label>
+        <input type="radio" id="kylla" name="tallennus" value="Kyllä">
+      </form>  
+  </div>
+</body>
+</html>
